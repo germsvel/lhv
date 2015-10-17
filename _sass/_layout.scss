@@ -190,6 +190,7 @@
 
 
 
+
 /**
  * Posts
  */
@@ -233,4 +234,38 @@
             font-size: 18px;
         }
     }
+}
+
+/**
+* About-specific styles
+*/
+
+.profile-img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 1em;
+}
+
+.about-text {
+  float: left;
+  width: 500px;
+  margin-left: auto;
+  margin-top: 1em;
+}
+
+.copyright {
+  text-align: center;
+}
+
+@include media-query($on-laptop) {
+  .about-text {
+    background-color: red;
+  }
+}
+
+@include media-query($on-palm) {
+  .about-text {
+    background-color: blue;
+  }
 }
