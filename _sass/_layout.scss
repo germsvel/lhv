@@ -260,12 +260,11 @@
 
 @include media-query($on-laptop) {
   .about-text {
-    background-color: red;
+    width: 300px;
   }
 }
 
 @include media-query($on-palm) {
   .about-text {
-    background-color: blue;
   }
 }
