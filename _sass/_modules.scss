@@ -1,6 +1,17 @@
 // Modules are reusable components. e.g. sidebar sections, callouts, product lists, etc.
 // selector examples: .sidebar, .callout
 
+.about-text {
+  float: left;
+  width: 500px;
+  margin-left: auto;
+  margin-top: 1em;
+}
+
+.copyright {
+  text-align: center;
+}
+
 .profile-img {
   float: left;
   width: 150px;
@@ -8,6 +19,13 @@
   margin: 1em;
 }
 
-.copyright {
-  text-align: center;
+@include media-query($on-laptop) {
+  .about-text {
+    width: 300px;
+  }
+}
+
+@include media-query($on-palm) {
+  .about-text {
+  }
 }

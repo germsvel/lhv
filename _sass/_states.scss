@@ -3,20 +3,3 @@
 // e.g. hidden vs expanded, big screen vs small screen, or home page vs inside page
 // selector example: .is-active, .is-hidden
 
-.about-text {
-  float: left;
-  width: 500px;
-  margin-left: auto;
-  margin-top: 1em;
-}
-
-@include media-query($on-laptop) {
-  .about-text {
-    width: 300px;
-  }
-}
-
-@include media-query($on-palm) {
-  .about-text {
-  }
-}
