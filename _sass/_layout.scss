@@ -20,6 +20,10 @@
     margin-bottom: 0;
     float: left;
 
+    &:hover {
+      text-decoration: none;
+    }
+
     &,
     &:visited {
         color: $background-color;
