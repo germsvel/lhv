@@ -48,10 +48,14 @@
 }
 
 @include media-query($on-laptop) {
-  .about-text {
-    width: 300px;
-  }
 }
 
 @include media-query($on-palm) {
+  .summary-info {
+    width: 350px;
+  }
+
+  .profile-img {
+    margin: 1em;
+  }
 }
