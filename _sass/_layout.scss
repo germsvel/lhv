@@ -28,6 +28,10 @@
     &:visited {
         color: $background-color;
     }
+
+    @include media-query($on-palm) {
+      font-size: 20px;
+    }
 }
 
 .site-nav {
