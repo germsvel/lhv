@@ -11,3 +11,6 @@ keep_files: ['/images', '/assets']
 
 # Build settings
 markdown: kramdown
+
+collections:
+  - research_papers
