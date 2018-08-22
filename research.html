@@ -4,6 +4,32 @@ title: research
 permalink: /research/
 ---
 
+<h3>Publications</h3>
+{% assign published_papers = site.research_papers | where: "research_paper_type", "published_paper" | sort: "rank" %}
+
+{% for paper in published_papers %}
+  <div class="research-paper">
+    <span class="research-title">
+      <a target="_blank" href="{{ paper.journal_url }}">
+        {{ paper.title }}
+      </a>
+    </span>
+
+    {% if paper.coauthors %}
+    </br>
+      with {{ paper.coauthors }}
+    {% endif %}
+
+    {% if paper.journal %}
+    </br>
+      <span class="research-paper-journal">{{ paper.journal }}</span>
+    {% endif %}
+  </div>
+
+{% endfor %}
+
+<p class="solid-line"></p>
+
 <h3>Working Papers</h3>
 
 {% assign working_papers = site.research_papers | where: "research_paper_type", "working_paper" | sort: "rank" %}
