@@ -52,9 +52,16 @@ permalink: /research/
         {% if forloop.first != true %}
           |
         {% endif %}
-        <a target="_blank" href="{{ site.base_url }}/assets/research/{{ asset.link }}">
-          {{ asset.type }}
-        </a>
+
+        {% if asset.link %}
+          <a target="_blank" href="{{ site.base_url }}/assets/research/{{ asset.link }}">
+            {{ asset.type }}
+          </a>
+        {% elsif asset.external_link %}
+          <a target="_blank" rel="external" href="{{ asset.external_link }}">
+            {{ asset.type }}
+          </a>
+        {% endif %}
       {% endfor %}
       ]
     {% endif %}
