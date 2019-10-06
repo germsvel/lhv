@@ -30,6 +30,55 @@ permalink: /research/
 
 <p class="solid-line"></p>
 
+<h3>Papers Under Review</h3>
+
+{% assign papers_under_review = site.research_papers | where: "research_paper_type", "under_review" | sort: "rank" %}
+
+{% for paper in papers_under_review %}
+  <div class="research-paper">
+    <span class="research-title">
+      {{ paper.title }}
+    </span>
+
+    {% if paper.coauthors %}
+    </br>
+      with {{ paper.coauthors }}
+    {% endif %}
+
+    {% if paper.assets %}
+    </br>
+    Current Version: [
+      {% for asset in paper.assets %}
+        {% if forloop.first != true %}
+          |
+        {% endif %}
+
+        {% if asset.link %}
+          <a target="_blank" href="{{ site.base_url }}/assets/research/{{ asset.link }}">
+            {{ asset.type }}
+          </a>
+        {% elsif asset.external_link %}
+          <a target="_blank" rel="external" href="{{ asset.external_link }}">
+            {{ asset.type }}
+          </a>
+        {% endif %}
+      {% endfor %}
+      ]
+    {% endif %}
+
+    {% if paper.status %}
+      </br>
+      <span>{{ paper.status }}</span>
+      {% if paper.journal %}
+       - <span class="research-paper-journal">{{ paper.journal }}</span>
+      {% endif %}
+    {% endif %}
+
+  </div>
+{% endfor %}
+
+<p class="solid-line"></p>
+
 <h3>Working Papers</h3>
 
 {% assign working_papers = site.research_papers | where: "research_paper_type", "working_paper" | sort: "rank" %}
@@ -79,7 +128,7 @@ permalink: /research/
 
 <p class="solid-line"></p>
 
-<h3>Works In Progress</h3>
+<h3>Research In Progress</h3>
 
 {% assign works_in_progress = site.research_papers | where: "research_paper_type", "work_in_progress" | sort: "rank"  %}
 
