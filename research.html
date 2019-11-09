@@ -128,10 +128,19 @@ permalink: /research/
 
 <p class="solid-line"></p>
 
-<h3>Research In Progress</h3>
+<h3>Selected Works In Progress</h3>
 
 {% assign works_in_progress = site.research_papers | where: "research_paper_type", "work_in_progress" | sort: "rank"  %}
 
 {% for paper in works_in_progress %}
-  <p class="research-title">{{ paper.title }}</p>
+  <div class="research-paper">
+    <span class="research-title">
+      {{ paper.title }}
+    </span>
+
+    {% if paper.coauthors %}
+      </br>
+      with {{ paper.coauthors }}
+    {% endif %}
+  </div>
 {% endfor %}
