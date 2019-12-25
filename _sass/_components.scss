@@ -26,7 +26,6 @@
 .profile-img {
   float: left;
   width: 260px;
-  height: 260px;
   margin: 0 1em 1em 0;
 
   @include media-query($on-palm) {
