@@ -23,6 +23,9 @@ permalink: /research/
     {% if paper.journal %}
     </br>
       <span class="research-paper-journal">{{ paper.journal }}</span>
+      {% if paper.ungated_url %}
+        - <span class="">[ <a target="_blank" href="{{ paper.ungated_url }}">pdf</a> ]</span>
+      {% endif %}
     {% endif %}
   </div>
 
